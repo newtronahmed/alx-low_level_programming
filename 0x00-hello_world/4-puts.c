@@ -3,6 +3,7 @@
 /**
  * main - Entry point
  * Description: This program prints to standard output using put function
+ * Return: Always 0 (Success)
  */
 
 int main(void)
