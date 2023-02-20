@@ -13,15 +13,15 @@ int main(void)
 	{
 		for (y = 1; y < 10; y++)
 		{
-			if (x != y)
+			if (x != y && x < y)
 			{
-				putchar('0' + x);
-				putchar('0' + y);
-				if ((x != 8) || (y != 9))
-				{
-					putchar(',');
-					putchar(' ');
-				}
+					putchar('0' + x);
+					putchar('0' + y);
+					if ((x != 8) || (y != 9))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 			}
 		}
 	}
