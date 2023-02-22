@@ -1,6 +1,6 @@
 #include <stdio.h>
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _MAIN_HEADER_
+#define _MAIN_HEADER_
 
 /**
  * print_alphabet - Print alphabets
@@ -37,4 +37,4 @@ void print_alphabet_x10(void)
 	}
 	putchar('\n');
 }
-#endif /* _MAIN_H_ */
+#endif /* _MAIN_HEADER_ */
