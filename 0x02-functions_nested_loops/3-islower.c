@@ -2,6 +2,7 @@
 /**
  * _islower- check if is lower
  *
+ * @c: ASCII code for character
  * Return: 1 or 0
  */
 int _islower(int c)
