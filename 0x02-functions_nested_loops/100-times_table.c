@@ -24,12 +24,20 @@ void print_times_table(int n)
 				if (ixj <= 9)
 				{
 					_putchar(' ');
+					_putchar(' ');
 					_putchar('0' + ixj);
+				}
+				else if (ixj <= 99)
+				{
+					_putchar(' ');
+					_putchar('0' + (ixj / 10));
+					_putchar('0' + (ixj % 10));
 				}
 				else
 				{
-					_putchar('0' + (ixj / 10));
-					_putchar('0' + (ixj % 10));
+					_putchar('0' + (ixj / 100));
+					_putchar('0' + (ixj / 10) % 10);
+					_putchar('0' + (ixj % 10);
 				}
 			}
 			_putchar('\n');
