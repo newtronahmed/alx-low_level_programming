@@ -27,14 +27,3 @@ void print_triangle(int size)
 		putchar('\n');
 	}
 }
-int main(void)
-{
-	print_triangle(1);
-	printf("%s \n", "End of 1");
-	print_triangle(2);
-	printf("%s\n", "End of 2");
-	print_triangle(10);
-	printf("%s\n", "End of 10");
-	print_triangle(-4);
-	return (0);
-}
