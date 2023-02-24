@@ -8,7 +8,7 @@
 int main(void)
 {
 	long int n1, n2, cur, sum;
-	
+
 	n1 = 1;
 	n2 = 2;
 	sum = 2;
@@ -28,7 +28,6 @@ int main(void)
 		{
 			break;
 		}
-		
 	}
 	printf("%ld\n", sum);
 	return (0);
