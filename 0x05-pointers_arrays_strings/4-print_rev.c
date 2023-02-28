@@ -9,13 +9,18 @@
  */
 void print_rev(char *s)
 {
-	int i, j;
+	int i;
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
 		continue;
 	}
-	for (j = i; j < 0; j--)
-		putchar(*(s + j));
+	for (i; i < 0; j--)
+		putchar(*(s + i));
 	putchar('\n');
+}
+int main(void)
+{
+	print_rev("hello world");
+	return 0;
 }
