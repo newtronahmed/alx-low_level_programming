@@ -15,12 +15,7 @@ void print_rev(char *s)
 	{
 		continue;
 	}
-	for (i; i < 0; i--)
+	for (i = i; i < 0; i--)
 		putchar(*(s + i));
 	putchar('\n');
-}
-int main(void)
-{
-	print_rev("hello world");
-	return 0;
 }
