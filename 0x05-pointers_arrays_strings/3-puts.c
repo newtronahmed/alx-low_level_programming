@@ -14,6 +14,12 @@ void _puts(char *s)
 
 	for (i = 0; *(s + i) != 0; i++)
 	{
-		putchar(*(s _ i));
+		putchar(*(s + i));
 	}
+	putchar('\n');
+}
+int main(void)
+{
+	_puts("hell is not great");
+	return (0);
 }
