@@ -2,7 +2,6 @@
 
 /**
  * _puts - prints a string to stdout.
- * 
  * @s: input parameter.
  *
  * Return: void
