@@ -5,7 +5,7 @@
  * a pointer to an int as parameter and updates
  * the value it points to to 98.
  *
- * @*n: integer pointer parameter.
+ * @n: integer pointer parameter.
  * Return: void.
  */
 
