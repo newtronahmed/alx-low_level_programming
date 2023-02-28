@@ -18,8 +18,3 @@ void _puts(char *s)
 	}
 	putchar('\n');
 }
-int main(void)
-{
-	_puts("hell is not great");
-	return (0);
-}
