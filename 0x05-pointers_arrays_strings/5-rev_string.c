@@ -31,6 +31,7 @@ void rev_string(char *s)
 		s[count - i] = temp;
 	}
 }
+/*
 int main(void)
 {
 	char s[6] = "Ahmed";
@@ -38,4 +39,4 @@ int main(void)
 	printf("%s\n", s);
 	return 0;
 }
- 
+*/
