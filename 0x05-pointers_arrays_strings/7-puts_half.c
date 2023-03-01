@@ -16,7 +16,6 @@ void puts_half(char *str)
 	{
 		count++;
 	}
-	printf("%d\n", count);
 	if (count % 2 == 0)
 	{
 		for (start = (count / 2); start < count; start++)
