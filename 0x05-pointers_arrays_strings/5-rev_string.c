@@ -12,9 +12,9 @@ void rev_string(char *s)
 {
 	int count, i;
 	char temp;
-	
+
 	count = 0;
-	while ( count >= 0)
+	while (count >= 0)
 	{
 		if (s[count] == '\0')
 		{
@@ -22,7 +22,6 @@ void rev_string(char *s)
 		}
 		count++;
 	}
-	printf("%d count \n", count);
 	count--;
 	for (i = 0; i <= count/2; i++)
 	{
@@ -31,12 +30,3 @@ void rev_string(char *s)
 		s[count - i] = temp;
 	}
 }
-/*
-int main(void)
-{
-	char s[6] = "Ahmed";
-	rev_string(s);
-	printf("%s\n", s);
-	return 0;
-}
-*/
