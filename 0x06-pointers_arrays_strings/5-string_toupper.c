@@ -15,7 +15,7 @@ char *string_toupper(char *s)
 	p = s;
 	while (*p != '\0')
 	{
-		if((*p >= 'a' && *p <= 'z'))
+		if ((*p >= 'a' && *p <= 'z'))
 		{
 			*p = (*p - 'a') + 'A';
 		}
