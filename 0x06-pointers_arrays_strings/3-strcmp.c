@@ -10,33 +10,17 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int i, op;
 
-	for (i = 0; *(s1 + i) != '\0' || *(s2 + i) != '\0'; i++)
+	i = op = 0;
+	while (op == 0)
 	{
-		if (*(s1 + i) == '\0' && *(s2 + i) != '\0')
-			return (-1);
-		else if (*(s2 + i) == '\0' && *(s1 + i) != '\0')
-			return (1);
-		else if (*(s1 + i) == (*s2 + i))
-			continue;
+		if (*(s1 + i) == '\n' && *(s2 + i) == '\0')
+		{
+			break;
+		}
+		op = *(s1 + i) - *(s2 + i);
+		i++;
 	}
-	/*if (*(s1 + i) == '\0' && *(s2 + i) == '\0')
-		return 0;*/
-	return 0;
+	return (op);
 }
-/**
-int main(void)
-{
-	char s1[6] = "hello";
-	char s2[7] = "world!";
-	int r;
-	r = _strcmp(s1, s2);
-	printf("%d \n", r);
-	r = _strcmp(s1, s1);
-	printf("%d \n", r);
-	r = _strcmp(s2, s1);
-	printf("%d \n", r);
-	return 0;
-}
-*/
