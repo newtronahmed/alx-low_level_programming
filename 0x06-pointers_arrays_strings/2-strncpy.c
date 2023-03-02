@@ -22,7 +22,7 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		*(p + i) = *(s + i);
 	}
-	if (i < n)
-		*p = '\0';
+	for ( ; i < n; i++)
+		*(p + i) = '\0';
 	return (dest);
 }
