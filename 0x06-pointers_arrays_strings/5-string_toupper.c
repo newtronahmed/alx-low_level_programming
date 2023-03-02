@@ -19,6 +19,6 @@ char *string_toupper(char *s)
 		{
 			*p = (*p - 'a') + 'A';
 		}
-		p++
+		p++;
 	}
 }
