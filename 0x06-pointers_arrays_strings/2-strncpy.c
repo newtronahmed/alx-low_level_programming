@@ -22,5 +22,6 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		*(p + i) = *(s + i);
 	}
+	*(p + i) = '\n';
 	return (dest);
 }
