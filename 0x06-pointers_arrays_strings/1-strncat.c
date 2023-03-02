@@ -9,6 +9,8 @@
  * @dest: input parameter string.
  * @src: input parameter string.
  * @n: integer
+ *
+ * Return: string.
  */
 char *_strncat(char *dest, char *src, int n)
 {
