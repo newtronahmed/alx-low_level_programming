@@ -5,7 +5,6 @@
  *
  * @a: integer pointer
  * @size: size
-
  * Return: void
  */
 void print_diagsums(int *a, int size)
