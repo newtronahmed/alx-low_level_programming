@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * main - print addition of two arguments
+ * main - print multiplication of two arguments
  *
  * @argc: argc
  * @argv: argv
@@ -19,6 +19,6 @@ int main(int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
-	printf("%d\n", num1 + num2);
+	printf("%d\n", num1 * num2);
 	return (0);
 }
