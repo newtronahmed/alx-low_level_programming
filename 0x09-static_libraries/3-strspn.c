@@ -25,7 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 			printf("%d is i \n", i);
 			if (*(accept + i) == *(s + j))
 			{
-				if ( j >= bytes)
+				if (j >= bytes)
 					bytes = j + 1;
 				count++;
 				break;
@@ -33,7 +33,7 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		i++;
 	}
-	printf("Count minus 1 is %d and i is %d",(count - 1), i);
+	printf("Count minus 1 is %d and i is %d", (count - 1), i);
 	if ((count - 1) == i)
 		return (bytes);
 	else
