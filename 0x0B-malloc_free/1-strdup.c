@@ -19,7 +19,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		return "failed to allocate memory";
+		return (NULL);
 	}
 	size = strlen(str);
 	s = malloc(sizeof(*s) * ++size);
