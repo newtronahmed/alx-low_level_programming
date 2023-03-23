@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <stdio.h>
 /**
  * array_iterator - iterates array parameter and runs a func on them
  *
@@ -10,7 +11,7 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
+	long unsigned int i;
 
 	for (i = 0; i < size; i++)
 	{
