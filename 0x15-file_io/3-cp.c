@@ -20,19 +20,19 @@ void close_file(int fd)
 		exit(100);
 	}
 }
-void cant_read(int fd_to, int fd_from, char *argv)
+void cant_read(int fd_from, int fd_to, char *argv)
 {
-		close_file(fd_to);
-		close_file(fd_from);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv);
-		exit(98);
+	close_file(fd_to);
+	close_file(fd_from);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv);
+	exit(98);
 
 }
 void cant_write(int fd_to, argv)
 {
-		close_file(fd_to);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
-		exit(99);
+	close_file(fd_to);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
+	exit(99);
 }
 int main(int argc, char *argv[])
 {
@@ -55,20 +55,15 @@ int main(int argc, char *argv[])
 	{
 		cant_write(fd_to, argv[2]);
 	}
-	if ((fd_from >= 0) && (fd_to >= 0))
+	while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
 	{
-		while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
+		bytes_written = write(fd_to, buffer, bytes_read);
+		if (bytes_written < 0 || bytes_written != bytes_read)
 		{
-			bytes_written = write(fd_to, buffer, bytes_read);
-			if (bytes_written < 0 || bytes_written != bytes_read)
-			{
-				close_file(fd_from);
-				cant_write(fd_to, argv[2]);
-			}
+			close_file(fd_from);
+			cant_write(fd_to, argv[2]);
 		}
-
 	}
-
 	if (bytes_read < 0)
 	{
 		cant_read(fd_from, fd_to, argv[1]);
