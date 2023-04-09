@@ -5,13 +5,10 @@
 #include <stdlib.h>
 
 /**
- * main - copy file to another
- *
- * @argc: aguments number
- * @argv: arguments pointers
- *
- * Return: Always 0
- */
+  * close_file - closes a given file description
+  * @fd: fd
+  * Return: void
+  */
 void close_file(int fd)
 {
 	if (close(fd) < 0)
@@ -20,6 +17,13 @@ void close_file(int fd)
 		exit(100);
 	}
 }
+/**
+ * cant_read - cannot read file procedure
+ * @fd_from: from
+ * @fd_to: to
+ * @argv: argv
+ * Return: void
+ */
 void cant_read(int fd_from, int fd_to, char *argv)
 {
 	close_file(fd_to);
@@ -28,12 +32,26 @@ void cant_read(int fd_from, int fd_to, char *argv)
 	exit(98);
 
 }
+/**
+ * cant_write- cannot write file procedure
+ * @fd_to: to
+ * @argv: argv
+ * Return: void
+ */
 void cant_write(int fd_to, char *argv)
 {
 	close_file(fd_to);
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
 	exit(99);
 }
+/**
+ * main - copy file to another
+ *
+ * @argc: aguments number
+ * @argv: arguments pointers
+ *
+ * Return: Always 0
+ */
 int main(int argc, char *argv[])
 {
 	int fd_to, fd_from;
@@ -45,7 +63,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (fd_to < 0)
 	{
 		cant_write(fd_to, argv[2]);
