@@ -28,7 +28,7 @@ void cant_read(int fd_from, int fd_to, char *argv)
 	exit(98);
 
 }
-void cant_write(int fd_to, argv)
+void cant_write(int fd_to, char *argv)
 {
 	close_file(fd_to);
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
@@ -45,15 +45,15 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from < 0)
-	{
-		cant_read(fd_from, fd_to, argv[1]);
-	}
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to < 0)
 	{
 		cant_write(fd_to, argv[2]);
+	}
+	fd_from = open(argv[1], O_RDONLY);
+	if (fd_from < 0)
+	{
+		cant_read(fd_from, fd_to, argv[1]);
 	}
 	while ((bytes_read = read(fd_from, buffer, 1024)) > 0)
 	{
