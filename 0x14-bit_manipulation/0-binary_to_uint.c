@@ -9,7 +9,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, sum, binary,two_power_i;
+	unsigned int i, sum, binary, two_power_i;
 	int len;
 
 	if (b == NULL)
@@ -26,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[len] != '0' && b[len] != '1')
 			return (0);
-		len++;	
+		len++;
 	}
 	if (len == 0)
 		return (0);
