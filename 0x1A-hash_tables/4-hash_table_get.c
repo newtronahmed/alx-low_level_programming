@@ -18,17 +18,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	}
 	index = key_index((const unsigned char *)key, ht->size);
 
-	printf("key index found %lu", index);
 	head = (ht->array)[index];
 	while (head != NULL)
 	{
 		if (strcmp(head->key, key) == 0)
 		{
-			printf("key found");
 			return (head->value);
 		}
 		head = head->next;
 	}
-	printf("key not found");
 	return (NULL);
 }

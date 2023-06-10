@@ -23,14 +23,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	item->value = strdup(value);
 	item->key = strdup(key);
-	ht->size++;
 	head = ht->array[index];
 	/* if current index is empty*/
 	if (head == NULL)
 	{
 		item->next = NULL;
 		ht->array[index] = item;
-		printf("Empty but key inserted");
 		return (1);
 	}
 	/*if key exists, update*/
@@ -40,7 +38,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(head->value);
 			head->value = strdup(value);
-			printf("key exists, but value updated");
 			return (1);
 		}
 		head = head->next;
@@ -48,6 +45,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	head = ht->array[index];
 	item->next = head;
 	ht->array[index]  = item;
-	printf("inserted, %s", item->key);
 	return (1);
 }
