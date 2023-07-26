@@ -10,7 +10,5 @@ clean:
 	$(RM) *~ *.swp $(NAME)
 oclean:
 	$(RM) $(OBJ)
-fclean:
-	clean oclean
-re:
-	clean all
+fclean: clean oclean
+re: oclean all
